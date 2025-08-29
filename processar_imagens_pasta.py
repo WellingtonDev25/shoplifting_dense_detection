@@ -7,8 +7,8 @@ from utils.helper import GetLogger, Predictor
 # =========================
 # CONFIGURAÇÃO
 # =========================
-INPUT_DIR   = Path("novas_imagens/suspeito")         # pasta de entrada
-OUTPUT_DIR  = Path("novas_imagens/suspeito_dense_low")   # pasta de saída
+INPUT_DIR   = Path("datasets_recortes/suspeito")         # pasta de entrada
+OUTPUT_DIR  = Path("datasets_recortes/suspeito_dense")   # pasta de saída
 RECURSIVE   = True                                   # True = varrer subpastas
 SAVE_BOTH   = False                                  # True = salvar também o out_frame "normal"
 SUFFIX_SEG  = "_densepose"                           # sufixo do arquivo processado

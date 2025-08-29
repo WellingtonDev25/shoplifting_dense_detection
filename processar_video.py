@@ -10,7 +10,7 @@ import uuid
 
 # ================== CONFIG ==================
 # VIDEO_PATH          = "rtsp://admin:Ii3432841296@192.168.1.21:554/cam/realmonitor?channel=1&subtype=0" 
-VIDEO_PATH          = "nao usados/The Medicine Rack Ransacker (@favtrip).mp4"    # caminho do v�deo ou RTSP
+VIDEO_PATH          = "videos/The Lemonade Looting Bearded Beggar.mp4"    # caminho do v�deo ou RTSP
 MODEL_PATH          = "yolo11n.pt"    # modelo YOLO
 CONF_THRESH         = 0.35            # confian�a m�nima
 FRAME_STRIDE_PER_ID = 4               # chama processar_roi a cada N frames POR TRACK ID
@@ -131,11 +131,11 @@ def main():
                             img_dense = processar_roi_image(roi_lb)  # <<< SUA INFER�NCIA AQUI
                             cv2.imshow('dense',img_dense)
                             label = classificar_imagem(img_dense)  # <<< SUA INFER�NCIA AQUI
-                            print(label)
-                            if label == "suspeitos":
-                                idname = uuid.uuid4()
-                                cv2.imwrite(f'suspeitas/{idname}.jpg',roi_lb)
-                                print('imagem salva ',idname)
+                            # print(label)
+                            # if label == "suspeitos":
+                            #     idname = uuid.uuid4()
+                            #     cv2.imwrite(f'suspeitas/{idname}.jpg',roi_lb)
+                            #     print('imagem salva ',idname)
                             
                             label_by_id[tid] = label
                             next_due_frame[tid] = frame_idx + FRAME_STRIDE_PER_ID
